@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trending Songs | HarmonyPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --text-light: #6b7280;
+      --bg: #ecfdf5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #14322e, #0a2929);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #064e3b;
+      animation: gradientShift 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes gradientShift {
+      from { background-position: left; }
+      to { background-position: right; }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      color: white;
+      animation: fadeIn 1s ease;
+    }
+
+    .song-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .song-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      animation: slideUp 0.6s ease;
+    }
+
+    .song-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .song-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .song-card h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: var(--primary-dark);
+    }
+
+    .song-card p {
+      font-size: 14px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+      outline: none;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔥 Recent Trending Songs</h2>
+
+  <div class="song-grid">
+
+    <!-- Song 1: Aavan Jaavan -->
+    <div class="song-card">
+      <img src="Image\hq720.jpg" alt="Aavan Jaavan - WAR 2">
+      <h4>Aavan Jaavan</h4>
+      <p>Movie: WAR 2</p>
+      <audio controls>
+        <source src="Music\Aavan Jaavan War 2 320 Kbps.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <!-- Song 2: Tu Hain Toh Main Hoon -->
+    <div class="song-card">
+      <img src="Image\3.jpg" alt="Tu Hain Toh Main Hoon - Sky Force">
+      <h4>Tu Hain Toh Main Hoon</h4>
+      <p>Movie: Sky Force</p>
+      <audio controls>
+        <source src="Music\Tu Hain Toh Main Hoon Sky Force 320 Kbps.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+    <!-- Song 3: Zaroorat Se Zyada -->
+    <div class="song-card">
+      <img src="Image\4.jpg" alt="Zaroorat Se Zyada - Veeda">
+      <h4>Zaroorat Se Zyada</h4>
+      <p>Movie: Vedaa</p>
+      <audio controls>
+        <source src="Music\Zaroorat Se Zyada Vedaa 128 Kbps.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+
+
+    <!-- You can add more songs below like this -->
+    <!--
+    <div class="song-card">
+      <img src="img/another-song.jpg" alt="Another Song">
+      <h4>Another Song</h4>
+      <p>by Artist Name</p>
+      <audio controls src="music/another-song.mp3"></audio>
+    </div>
+    -->
+
+  </div>
+
+</body>
+</html>

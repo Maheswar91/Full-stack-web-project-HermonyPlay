@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HarmonyPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #10b981;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #10b981;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      margin-bottom: 30px;
+      color: #ddd;
+      animation: fadeIn 2s ease;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      background: #10b981;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 6px;
+      transition: background 0.3s;
+      animation: fadeIn 2.5s ease;
+    }
+
+    .btn:hover {
+      background: #059669;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HarmonyPlay</h1>
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Welcome to HarmonyPlay</h2>
+    <p>Your ultimate destination to stream, upload, and share music with the world.</p>
+    <a class="btn" href="register.html">Get Started</a>
+  </div>
+
+  <footer>
+    &copy; 2025 HarmonyPlay. All rights reserved.
+  </footer>
+
+</body>
+</html>
+
+

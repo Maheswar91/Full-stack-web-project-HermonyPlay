@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Playlists | HarmonyPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --text-light: #d1fae5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #203a43, #0f2027);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      animation: gradientShift 12s ease-in-out infinite alternate;
+    }
+
+    @keyframes gradientShift {
+      from { background-position: left; }
+      to { background-position: right; }
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 30px;
+      animation: fadeIn 1s ease;
+      color: white;
+    }
+
+    .playlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .playlist-card {
+      background: #ffffff;
+      color: #064e3b;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 0.6s ease;
+    }
+
+    .playlist-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.2);
+    }
+
+    .playlist-card h4 {
+      font-size: 22px;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .playlist-card p {
+      font-size: 14px;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+
+    .playlist-card button {
+      padding: 10px 16px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .playlist-card button:hover {
+      background-color: var(--primary-dark);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 30px 15px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Your Playlists</h2>
+
+  <div class="playlist-grid">
+    <div class="playlist-card">
+      <h4>Chill Vibes</h4>
+      <p>12 songs · Relax and unwind</p>
+      <button>Open Playlist</button>
+    </div>
+
+    <div class="playlist-card">
+      <h4>Workout Mix</h4>
+      <p>15 songs · Feel the burn</p>
+      <button>Open Playlist</button>
+    </div>
+
+    <div class="playlist-card">
+      <h4>Evening Jazz</h4>
+      <p>10 songs · Smooth & soulful</p>
+      <button>Open Playlist</button>
+    </div>
+
+    <div class="playlist-card">
+      <h4>Study Time</h4>
+      <p>18 songs · Focus & flow</p>
+      <button>Open Playlist</button>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up | HarmonyPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --text-light: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #1f3343, #11252d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: gradientShift 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes gradientShift {
+      from { background-position: left; }
+      to { background-position: right; }
+    }
+
+    .register-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+      animation: fadeSlideIn 1s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--primary-dark);
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      font-size: 16px;
+      color: var(--text-light);
+      background: #fff;
+      padding: 0 4px;
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 10px;
+      font-size: 13px;
+      color: var(--primary-dark);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-button {
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9fafb;
+      color: #111827;
+      font-weight: 500;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .social-button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+    .social-button:hover {
+      background-color: #e5f9f0;
+    }
+
+    .extra {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .extra a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .register-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-container">
+    <h2>Sign Up to HarmonyPlay</h2>
+    <form action="php/register.php" method="POST">
+      <div class="input-group">
+        <input type="tel" name="phone" id="phone" required placeholder=" " />
+        <label for="phone">Phone Number</label>
+      </div>
+      <button type="submit">Sign Up with Phone</button>
+    </form>
+
+    <div class="social-buttons">
+      <button class="social-button">
+        <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Icon" />
+        Sign Up with Google
+      </button>
+      <button class="social-button">
+        <img src="https://www.svgrepo.com/show/303128/apple-logo.svg" alt="Apple Icon" />
+        Sign Up with Apple
+      </button>
+    </div>
+
+    <div class="extra">
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

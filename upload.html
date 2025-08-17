@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload Music | HarmonyPlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --text-light: #6b7280;
+      --bg: #ecfdf5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #14292d, #071c1e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: gradientShift 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes gradientShift {
+      from { background-position: left; }
+      to { background-position: right; }
+    }
+
+    .upload-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 500px;
+      animation: fadeSlideIn 1s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .upload-container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--primary-dark);
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input,
+    .input-group select,
+    .input-group textarea {
+      width: 100%;
+      padding: 14px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      font-size: 16px;
+      color: var(--text-light);
+      background: #fff;
+      padding: 0 4px;
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label,
+    .input-group textarea:focus + label,
+    .input-group textarea:not(:placeholder-shown) + label,
+    .input-group select:focus + label {
+      top: -10px;
+      left: 10px;
+      font-size: 13px;
+      color: var(--primary-dark);
+    }
+
+    .dropzone {
+      border: 2px dashed var(--primary);
+      padding: 30px;
+      text-align: center;
+      border-radius: 10px;
+      color: var(--primary-dark);
+      background: #f0fdf4;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dropzone:hover {
+      background: #d1fae5;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    @media (max-width: 500px) {
+      .upload-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-container">
+    <h2>Upload Your Music</h2>
+    <form action="php/upload_music.php" method="POST" enctype="multipart/form-data">
+      
+      <div class="input-group">
+        <input type="text" name="title" id="title" required placeholder=" " />
+        <label for="title">Song Title</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="artist" id="artist" required placeholder=" " />
+        <label for="artist">Artist Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="genre" id="genre" placeholder=" " />
+        <label for="genre">Genre</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" name="tags" id="tags" placeholder=" " />
+        <label for="tags">Tags (comma-separated)</label>
+      </div>
+
+      <div class="input-group">
+        <input type="file" name="music_file" id="music_file" accept=".mp3" required />
+        <label for="music_file">Select MP3 File</label>
+      </div>
+
+      <button type="submit">Upload</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HarmonyPlay - Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --primary: #205b5b; /* Green */
+      --primary-dark: #032916;
+      --text-light: #6b7280;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #203a43, #2c5364);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      animation: gradientShift 10s infinite alternate ease-in-out;
+    }
+
+    @keyframes gradientShift {
+      0% {
+        background-position: left;
+      }
+      100% {
+        background-position: right;
+      }
+    }
+
+    .login-container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 400px;
+      animation: fadeSlideIn 1s ease-out;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: var(--primary);
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 14px;
+      left: 12px;
+      font-size: 16px;
+      color: var(--text-light);
+      background: #fff;
+      padding: 0 4px;
+      pointer-events: none;
+      transition: 0.2s ease;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 10px;
+      font-size: 13px;
+      color: var(--primary-dark);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: var(--primary-dark);
+    }
+
+    .social-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .social-button {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ecfdf5;
+      border: 1px solid var(--primary);
+      color: var(--primary-dark);
+      transition: all 0.3s ease;
+    }
+
+    .social-button:hover {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .social-button img {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+
+    .extra {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .extra a {
+      color: var(--primary-dark);
+      text-decoration: none;
+      margin-left: 5px;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login to HarmonyPlay</h2>
+    <form action="php/login.php" method="POST">
+      <div class="input-group">
+        <input type="email" name="email" id="email" required placeholder=" " />
+        <label for="email">Email Address</label>
+      </div>
+      <div class="input-group">
+        <input type="password" name="password" id="password" required placeholder=" " />
+        <label for="password">Password</label>
+      </div>
+      <button type="submit">Log In</button>
+    </form>
+
+    <div class="social-buttons">
+      <button class="social-button">
+        <img src="https://www.svgrepo.com/show/355037/google.svg" alt="Google icon" />
+        Login with Google
+      </button>
+      <button class="social-button">
+        <img src="https://www.svgrepo.com/show/157817/facebook.svg" alt="Facebook icon" />
+        Login with Facebook
+      </button>
+    </div>
+
+    <div class="extra">
+      <p>Don't have an account?<a href="register.html">Register</a></p>
+      <p><a href="#">Forgot Password?</a></p>
+    </div>
+  </div>
+
+</body>
+</html>
